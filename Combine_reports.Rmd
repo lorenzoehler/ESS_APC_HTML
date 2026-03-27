@@ -17,18 +17,24 @@ library(htmltools)
 
 ```{r}
 # Names of your existing HTML files
-html_files <- list.files("../syntax/",pattern = "html$")
+html_files <- list.files("../ESS_APC_HTML/",pattern = "html$")
 
 ## correct order and only include important ones
 # dput(html_files)
-html_files <- c("01-preprocessing.html", "01exA-variable_selection.html",
-                "02-processing.html", "03-sampling_frame.html", 
-                "03exA-SAE_models.html", "04-Simulation.html", 
-                "05-processing_results.html", 
-                "05expA-visuals.html", "05expB-Bias.html")
+html_files <- c("01-preprocessing.html", "02-sample_description.html",
+                "03an-life_satisfaction---KopieLukas.html",
+                "03des-life_satisfaction-descriptive---KopieLukas.html", 
+                "04an-trust_in_politics.html", 
+                "04des-trust_in_politics-descriptive.html"
+                )
 
 # Custom tab labels
-tab_labels <- c("Preprocess", "Variable Selection", "Dummy Coding", "Sampling", "Fit Models","Batch Iteration","Results Prep","Results","Bias")
+tab_labels <- c("Aufbereitung", "Variablen Beschreibung",
+                "Analyse Lebenszufriedenheit", 
+                "Deskription Lebenszufriedenheit",
+                "Analyse Vertrauen in Politik", 
+                "Deskription Vertrauen in Politik"
+                )
 
 
 # Create tab buttons with custom names
@@ -94,4 +100,6 @@ combined <- tags$html(
 # Save as one HTML
 save_html(combined, file = "combined.html")
 ```
+
+
 
